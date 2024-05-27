@@ -27,7 +27,7 @@ const PeopleListRenderer = ({title}: Props) => {
               // key in real world scenario would be the user id or a unique id
               <TouchableScalable key={index}>
                 <View style={styles.peopleContainer}>
-                  <Image source={{uri: 'https://picsum.photos/275'}} style={styles.peopleImg} />
+                  <Image source={{uri: 'https://picsum.photos/150'}} style={styles.peopleImg} />
 
                   <Text style={styles.usernameText}>@{user.id}</Text>
 

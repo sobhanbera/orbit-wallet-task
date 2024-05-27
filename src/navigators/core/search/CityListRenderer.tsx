@@ -27,7 +27,7 @@ const CityListRenderer = ({title}: Props) => {
               // key in real world scenario would be the city id or a unique id
               <TouchableScalable key={index}>
                 <ImageBackground
-                  source={{uri: 'https://picsum.photos/333'}} // since this is a test UI, else we'll get the image data from API itself, in the same object
+                  source={{uri: 'https://picsum.photos/200'}} // since this is a test UI, else we'll get the image data from API itself, in the same object
                   style={styles.cardImage}>
                   <View style={styles.cardContainer}>
                     <View style={styles.cardPostCountContainer}>
