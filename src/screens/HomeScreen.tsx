@@ -3,7 +3,7 @@ import React, {useCallback, useState} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {BOTTOM_TAB_BAR_HEIGHT_UNIVERSAL, DEVICE_STATUSBAR_HEIGHT} from '../configs/constants';
-import ImageContent from '../navigators/core/home/ImageContent';
+import ImageContent from './core/home/ImageContent';
 
 const {height} = Dimensions.get('window');
 

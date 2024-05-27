@@ -1,13 +1,13 @@
-import {View, Text, StyleSheet, ScrollView, ImageBackground} from 'react-native';
+import {Text, StyleSheet, ScrollView, ImageBackground} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {AppColors} from '../configs/colors';
 import SearchDummyInput from '../components/SearchDummyInput';
 import {TouchableScalable} from '../components/resuables/TouchableScalable';
 import LinearGradient from 'react-native-linear-gradient';
-import CityListRenderer from '../navigators/core/search/CityListRenderer';
-import HashtagedCityRenderer from '../navigators/core/search/HashtagedCityRenderer';
-import PeopleListRenderer from '../navigators/core/search/PeopleListRenderer';
+import CityListRenderer from './core/search/CityListRenderer';
+import HashtagedCityRenderer from './core/search/HashtagedCityRenderer';
+import PeopleListRenderer from './core/search/PeopleListRenderer';
 
 type Props = {};
 const SearchScreen = (_props: Props) => {
