@@ -7,11 +7,11 @@ A react native application containing a bottom tab navigator and 2 screens (Feed
 - Feed Screen contains a list of posts
 - Search Screen contains a search bar, and a list of some suggestions
 
+- On android the images are not changing, but it does work in iOS. (In real world scenario, the data would be fetched from an API, and the images would be dynamic).
+
 ## Demo Images / Videos
 
-
 https://github.com/sobhanbera/orbit-wallet-task/assets/50291544/491c329a-0fdb-46b4-8e94-243a69dc5334
-
 
 <img src="https://github.com/sobhanbera/orbit-wallet-task/assets/50291544/bd2315b8-339b-4b34-ad25-68e4aa7dedd0" height="500" />
 <img src="https://github.com/sobhanbera/orbit-wallet-task/assets/50291544/c23d4179-1419-4647-8cb4-b86a9d2f8c43" height="500" />
