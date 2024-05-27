@@ -3,6 +3,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import HomeNavigator from './core/HomeNavigator';
 import SearchNavigator from './core/SearchNavigator';
+import AppTabBar from '../components/navigation/AppTabBar';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -13,10 +14,26 @@ const CoreAppNavigator = (_props: Props) => {
       id="CoreAppNavigator"
       initialRouteName="HomeNavigator"
       screenOptions={{headerShown: false}}
-      backBehavior="history">
-      <BottomTab.Screen name="HomeNavigator" component={HomeNavigator} />
+      backBehavior="history"
+      tabBar={({descriptors, insets, navigation, state}) => (
+        <AppTabBar
+          descriptors={descriptors}
+          insets={insets}
+          navigation={navigation}
+          state={state}
+        />
+      )}>
+      <BottomTab.Screen
+        name="HomeNavigator"
+        component={HomeNavigator}
+        options={{tabBarLabel: 'Home'}}
+      />
 
-      <BottomTab.Screen name="SearchNavigator" component={SearchNavigator} />
+      <BottomTab.Screen
+        name="SearchNavigator"
+        component={SearchNavigator}
+        options={{tabBarLabel: 'Search'}}
+      />
     </BottomTab.Navigator>
   );
 };
