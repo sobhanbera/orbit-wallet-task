@@ -13,6 +13,7 @@ const HomeNavigator = (_props: Props) => {
         headerShown: false,
         cardStyle: {
           backgroundColor: AppColors.background,
+          marginBottom: 100,
         },
       }}
       initialRouteName="HomeScreen">
