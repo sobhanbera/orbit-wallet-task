@@ -2,18 +2,21 @@ import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from '../../screens/HomeScreen';
 import {AppColors} from '../../configs/colors';
+import {Platform} from 'react-native';
 
 const StackNavigator = createStackNavigator();
 
 type Props = {};
 const HomeNavigator = (_props: Props) => {
+  const isIOS = Platform.OS === 'ios';
+
   return (
     <StackNavigator.Navigator
       screenOptions={{
         headerShown: false,
         cardStyle: {
           backgroundColor: AppColors.background,
-          marginBottom: 100,
+          marginBottom: isIOS ? 100 : 0,
         },
       }}
       initialRouteName="HomeScreen">

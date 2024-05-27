@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
-    paddingBottom: 20,
+    paddingBottom: 100,
   },
   textContainer: {
     maxWidth: '75%',

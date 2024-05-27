@@ -1,4 +1,4 @@
-import {View, Text, StyleSheet, FlatList, ListRenderItemInfo, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, FlatList, ListRenderItemInfo, Dimensions, Platform} from 'react-native';
 import React, {useCallback, useState} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
@@ -19,6 +19,8 @@ const HomeScreen = (_props: Props) => {
   const {bottom} = useSafeAreaInsets();
   const IMAGE_HEIGHT = height - bottom - BOTTOM_TAB_BAR_HEIGHT_UNIVERSAL;
 
+  const isIOS = Platform.OS === 'ios';
+
   const [images, setImages] = useState(generateImages(10));
 
   /**
@@ -30,7 +32,9 @@ const HomeScreen = (_props: Props) => {
     setImages(prevImages => [...prevImages, ...generateImages(10)]);
   }, []);
 
-  const renderItem = ({item}: ListRenderItemInfo<any>) => <ImageContent imageData={item} imageHeight={IMAGE_HEIGHT} />;
+  const renderItem = ({item}: ListRenderItemInfo<any>) => (
+    <ImageContent imageData={item} imageHeight={isIOS ? IMAGE_HEIGHT : height} />
+  );
 
   return (
     <View style={{flex: 1}}>
@@ -46,7 +50,14 @@ const HomeScreen = (_props: Props) => {
         onEndReachedThreshold={0.5}
         initialNumToRender={10}
         windowSize={10}
-        getItemLayout={(data, index) => ({length: IMAGE_HEIGHT, offset: IMAGE_HEIGHT * index, index})}
+        snapToAlignment="start"
+        decelerationRate="fast"
+        snapToInterval={isIOS ? IMAGE_HEIGHT : height}
+        getItemLayout={(data, index) => ({
+          length: isIOS ? IMAGE_HEIGHT : height,
+          offset: isIOS ? IMAGE_HEIGHT * index : height * index,
+          index,
+        })}
         showsVerticalScrollIndicator={false}
       />
     </View>
