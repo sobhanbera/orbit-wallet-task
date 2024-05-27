@@ -1,13 +1,20 @@
-import {View, Text} from 'react-native';
 import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+
+import CoreAppNavigator from './navigators/CoreAppNavigator';
 
 type Props = {};
-
-const MainApp = (props: Props) => {
+const MainApp = (_props: Props) => {
   return (
-    <View>
-      <Text>MainApp</Text>
-    </View>
+    <GestureHandlerRootView style={{flex: 1}}>
+      <SafeAreaProvider style={{flex: 1}}>
+        <NavigationContainer>
+          <CoreAppNavigator />
+        </NavigationContainer>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 };
 
