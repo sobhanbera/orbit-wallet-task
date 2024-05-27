@@ -9,6 +9,10 @@ A react native application containing a bottom tab navigator and 2 screens (Feed
 
 - On android the images are not changing, but it does work in iOS. (In real world scenario, the data would be fetched from an API, and the images would be dynamic).
 
+### Download the Android app from the link [here](https://github.com/sobhanbera/orbit-wallet-task/releases/tag/demo-release)
+
+### To run on iOS, you've to setup the app.
+
 ## Demo Images / Videos
 
 https://github.com/sobhanbera/orbit-wallet-task/assets/50291544/491c329a-0fdb-46b4-8e94-243a69dc5334
